@@ -206,4 +206,4 @@ It contains 45 entries with the following planted anomalies for testing:
 | C2 beacon pattern | 5x rapid Pastebin reads via `python-requests` |
 | Crypto mining | `mlee` accessing mining pool at 2 AM |
 | Bot activity | 10 identical requests in 10 seconds from unknown IP |
-| Sensitive data upload | `employee_data.csv` sent to Dropbox |
+| Sensitive data upload | `employee_data.csv` sent to Dropbox | 
