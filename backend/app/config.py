@@ -7,6 +7,14 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     ANTHROPIC_API_KEY: str = ""
     UPLOAD_DIR: str = "uploads"
+    FRONTEND_URL: str = ""
+
+    def get_database_url(self) -> str:
+        url = self.DATABASE_URL
+        # Railway provides postgresql:// but SQLAlchemy needs postgresql+psycopg2://
+        if url.startswith("postgresql://"):
+            url = url.replace("postgresql://", "postgresql+psycopg2://", 1)
+        return url
 
     class Config:
         env_file = ".env"
