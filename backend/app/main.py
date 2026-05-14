@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
@@ -7,9 +8,18 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="SOC Log Analyzer", version="1.0.0")
 
+allowed_origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
+# Allow any Vercel deployment URL set via env
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    allowed_origins.append(frontend_url)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
