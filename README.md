@@ -7,6 +7,14 @@ A full-stack cybersecurity application that allows SOC (Security Operations Cent
 
 ---
 
+## 🚀 Live Demo
+**[https://soc-log-analyzer.vercel.app](https://soc-log-analyzer.vercel.app)**
+
+## 📹 Walkthrough Video
+**[Watch the demo walkthrough](https://drive.google.com/file/d/1QJWPSndByKSqf-aZ9JvCbagah6Bu5saY/view?usp=sharing)**
+
+---
+
 ## Features
 
 - **Authentication** — JWT-based login and registration
@@ -206,4 +214,4 @@ It contains 45 entries with the following planted anomalies for testing:
 | C2 beacon pattern | 5x rapid Pastebin reads via `python-requests` |
 | Crypto mining | `mlee` accessing mining pool at 2 AM |
 | Bot activity | 10 identical requests in 10 seconds from unknown IP |
-| Sensitive data upload | `employee_data.csv` sent to Dropbox | 
+| Sensitive data upload | `employee_data.csv` sent to Dropbox |
